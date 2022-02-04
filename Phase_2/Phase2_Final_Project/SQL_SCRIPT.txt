@@ -1,0 +1,28 @@
+----------------------------------------ADMIN TABLE-----------------------------------------------------
+
+create table admin(username varchar(30) primary key, password varchar(30));
+
+INSERT INTO user(username, password)
+Values('admin@gmail.com', '12345')
+
+
+----------------------------------------USER TABLE-----------------------------------------------------
+create table user(username varchar(30) primary key, password varchar(30));
+
+INSERT INTO user(username, password)
+Values('aich.nayan2@gmail.com', '12345')
+Values('ram@gmail.com', '12345')
+
+--------------------------------------FLIGHT DETAILS TABLE-----------------------------------------------
+
+create table flight_details(flight_no int primary key, airline_name varchar(30), price int, source_city varchar(30), destination_city varchar(30), departure_time time,arrival_time time, total_seats int, booked_searts int, seat_available int, date_travel date, class varchar(10) );
+
+Insert into flight_details(flight_no, airline_name, price, source_city, destination_city, departure_time, arrival_time, total_seats, booked_searts, seat_available, date_travel, class)
+
+Values(01, 'Air Asia', 20000, 'Puna', 'Kolkata', '12:00:00', '03:00:00', 20, 10, 10, '2020-01-27', 'Economy');
+Values(02, 'Indigo', 15000, 'Mumbai', 'Delhi', '01:00:00', '06:00:00', 30, 15, 15, '2020-02-01', 'Economy');
+
+---------------------------------BOOKING DETAILS TABLE-------------------------------------------------
+create table booking_details(email varchar(30) primary key, name varchar(30), address varchar(50), age int, mobile varchar(15), ID varchar(15),country varchar(10) );
+
+
