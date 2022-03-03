@@ -56,3 +56,9 @@ kubectl get rs
 to get the complete details of the deployment pod:
 kubectl describe deployments
 
+-------------------------------------------------------------------------
+
+exlanation file:
+https://docs.google.com/document/d/1e193TnAMnYAMbjsQzHuVBmray0dm716o-U7eNhhIe8s/edit
+
+
