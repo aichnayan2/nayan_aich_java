@@ -1,0 +1,58 @@
+how to create docker image:
+1. goto the path where you have docker file in the cmd.
+2. [docker build -t <name> .]
+
+
+docker login
+docker tag 544417c31a6f aichnayan2/544417c31a6f
+docker push aichnayan2/544417c31a6f
+
+docker run -p8080:8080 <image_id>
+
+
+---------------------------------------------
+KUBERNETES:
+------------------------------
+TO CREATE A POD:
+----------------
+kubectl run kubedemo --image=aichnayan2/544417c31a6f --port=8080 
+---------------------------------
+to check the pods running:
+---------------------------------
+kubectl get pods
+---------------------------------
+deployment:
+this commend create a deployment and ensure that all the pods are running
+when it is running all the pods if it finds that a pod is failed then replaces the failed pod
+
+kubectl create deployment kubedemo --image=aichnayan2/544417c31a6f:latest 
+
+to get the all the deployments status we use the commends:
+kubectl get deployments
+
+------------------------------
+we need to expose the deployment and the start the service of the deployment with the help of load balancer with port numbers.
+-----------------------
+kubectl expose deployment kubedemo --type LoadBalancer --port 8080 --target-port 8080
+
+how to check what services got started:
+kubectl get services 
+
+what image got started on the service:
+kubectl logs <podname>
+
+wider information of the service:
+kubectl get services -w
+
+wider information of the pods:
+kubectl get pods -o wide
+
+to create the replicas:
+kubectl scale --replicas=2 deployment/kubedemo
+
+to get the details of the replicas:
+kubectl get rs
+
+to get the complete details of the deployment pod:
+kubectl describe deployments
+
